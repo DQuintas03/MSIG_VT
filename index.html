@@ -2,69 +2,69 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300&family=Barlow+Condensed:wght@300;400;600;700&display=swap');
 *{box-sizing:border-box;margin:0;padding:0}
-#cr{display:flex;flex-direction:column;background:#080d06;border-radius:12px;overflow:hidden;font-family:'Barlow Condensed',sans-serif;width:100%;min-height:700px}
-#top{display:flex;flex:1;min-height:640px}
-#fc{width:420px;flex-shrink:0;background:#090f08;display:flex;align-items:center;justify-content:center;border-right:1px solid rgba(255,255,255,0.06);padding:24px}
-#fo{position:relative;width:372px;height:590px;transition:transform 0.45s cubic-bezier(.22,1,.36,1)}
+#cr{display:flex;flex-direction:column;background:#080d06;border-radius:12px;overflow:hidden;font-family:'Barlow Condensed',sans-serif;width:100%;min-height:480px}
+#top{display:flex;flex:1;min-height:440px}
+#fc{width:260px;flex-shrink:0;background:#090f08;display:flex;align-items:center;justify-content:center;border-right:1px solid rgba(255,255,255,0.06);padding:16px}
+#fo{position:relative;width:228px;height:380px;transition:transform 0.45s cubic-bezier(.22,1,.36,1)}
 #fo svg{position:absolute;inset:0;width:100%;height:100%}
-.pl{position:absolute;transform:translate(-50%,-50%);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:5px;transition:transform 0.2s;z-index:4}
+.pl{position:absolute;transform:translate(-50%,-50%);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;transition:transform 0.2s;z-index:4}
 .pl:hover{transform:translate(-50%,-50%) scale(1.4);z-index:8}
 .pl.act{transform:translate(-50%,-50%) scale(1.5);z-index:9}
-.pb{width:26px;height:26px;border-radius:50%;border:3px solid rgba(255,255,255,0.45);transition:box-shadow 0.2s}
-.pl:hover .pb,.pl.act .pb{box-shadow:0 0 0 8px rgba(255,255,255,0.1)}
+.pb{width:16px;height:16px;border-radius:50%;border:2px solid rgba(255,255,255,0.45);transition:box-shadow 0.2s}
+.pl:hover .pb,.pl.act .pb{box-shadow:0 0 0 5px rgba(255,255,255,0.1)}
 .pl.act .pb{animation:gw 1.4s ease-out infinite}
-@keyframes gw{0%{box-shadow:0 0 0 0 rgba(255,255,255,0.25)}100%{box-shadow:0 0 0 14px rgba(255,255,255,0)}}
-.pyr{font-size:10px;font-weight:700;letter-spacing:0.08em;color:rgba(255,255,255,0);transition:color 0.15s;white-space:nowrap}
+@keyframes gw{0%{box-shadow:0 0 0 0 rgba(255,255,255,0.25)}100%{box-shadow:0 0 0 9px rgba(255,255,255,0)}}
+.pyr{font-size:8px;font-weight:700;letter-spacing:0.08em;color:rgba(255,255,255,0);transition:color 0.15s;white-space:nowrap}
 .pl:hover .pyr,.pl.act .pyr{color:rgba(255,255,255,0.75)}
 #zb{position:absolute;inset:0;pointer-events:none;z-index:20;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s;border-radius:12px}
 #zb.on{opacity:1;pointer-events:all;background:rgba(0,0,0,0.55)}
-#zbd{background:rgba(6,10,5,0.97);border:1px solid rgba(255,255,255,0.13);border-radius:12px;padding:20px 28px;text-align:center;transform:scale(0.75);transition:transform 0.35s cubic-bezier(.22,1,.36,1);min-width:180px}
+#zbd{background:rgba(6,10,5,0.97);border:1px solid rgba(255,255,255,0.13);border-radius:10px;padding:14px 20px;text-align:center;transform:scale(0.75);transition:transform 0.35s cubic-bezier(.22,1,.36,1);min-width:140px}
 #zb.on #zbd{transform:scale(1)}
-#zyr{font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:700;color:#fff;line-height:1}
-#zti{font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-top:5px;line-height:1.3}
-#zpo{font-size:11px;color:rgba(255,255,255,0.28);letter-spacing:0.09em;margin-top:6px}
-#zcl{font-size:11px;color:rgba(255,255,255,0.2);margin-top:12px;cursor:pointer;pointer-events:all;letter-spacing:0.07em}
-#pn{flex:1;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:3rem 3rem}
+#zyr{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700;color:#fff;line-height:1}
+#zti{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-top:4px;line-height:1.3}
+#zpo{font-size:9px;color:rgba(255,255,255,0.28);letter-spacing:0.09em;margin-top:4px}
+#zcl{font-size:9px;color:rgba(255,255,255,0.2);margin-top:8px;cursor:pointer;pointer-events:all;letter-spacing:0.07em}
+#pn{flex:1;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:2rem 2rem}
 #pbg{position:absolute;inset:0;background-size:cover;background-position:center center;background-repeat:no-repeat;opacity:0;transition:opacity 0.7s}
 #pbg::after{content:'';position:absolute;inset:0;background:linear-gradient(110deg,rgba(8,13,6,0.97) 0%,rgba(8,13,6,0.75) 50%,rgba(8,13,6,0.15) 100%)}
 #pc{position:relative;z-index:2;opacity:0;transform:translateY(10px);transition:opacity 0.4s,transform 0.4s}
 #pc.on{opacity:1;transform:translateY(0)}
-.ptag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;padding:5px 16px;border-radius:20px;margin-bottom:14px}
-.pyear{font-family:'Cormorant Garamond',serif;font-size:100px;font-weight:700;color:#fff;line-height:0.85;letter-spacing:-0.03em;margin-bottom:16px}
-.ptitle{font-size:22px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#fff;line-height:1.2;margin-bottom:14px}
-.pdesc{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;font-style:italic;color:rgba(255,255,255,0.68);line-height:1.65;max-width:460px}
-.phint{font-size:15px;color:rgba(255,255,255,0.18);font-style:italic;font-family:'Cormorant Garamond',serif}
+.ptag{display:inline-block;font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:10px}
+.pyear{font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:700;color:#fff;line-height:0.85;letter-spacing:-0.03em;margin-bottom:12px}
+.ptitle{font-size:16px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#fff;line-height:1.2;margin-bottom:10px}
+.pdesc{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:300;font-style:italic;color:rgba(255,255,255,0.68);line-height:1.65;max-width:360px}
+.phint{font-size:12px;color:rgba(255,255,255,0.18);font-style:italic;font-family:'Cormorant Garamond',serif}
 #tb{display:flex;background:#060b05;border-top:1px solid rgba(255,255,255,0.05);overflow-x:auto;scrollbar-width:none}
 #tb::-webkit-scrollbar{display:none}
-.ti{flex:1;min-width:68px;padding:12px 4px 10px;text-align:center;cursor:pointer;border-right:1px solid rgba(255,255,255,0.04);transition:background 0.2s}
+.ti{flex:1;min-width:52px;padding:9px 3px 7px;text-align:center;cursor:pointer;border-right:1px solid rgba(255,255,255,0.04);transition:background 0.2s}
 .ti:hover,.ti.on{background:rgba(255,255,255,0.06)}
-.tiyr{font-size:11px;font-weight:700;color:rgba(255,255,255,0.3);transition:color 0.2s;letter-spacing:0.04em}
+.tiyr{font-size:9px;font-weight:700;color:rgba(255,255,255,0.3);transition:color 0.2s;letter-spacing:0.04em}
 .ti.on .tiyr,.ti:hover .tiyr{color:rgba(255,255,255,0.85)}
-.tidot{width:6px;height:6px;border-radius:50%;margin:5px auto 0}
+.tidot{width:5px;height:5px;border-radius:50%;margin:4px auto 0}
 </style>
 
 <div id="cr">
   <div id="top">
     <div id="fc">
       <div id="fo">
-        <svg viewBox="0 0 372 590" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 228 380" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <pattern id="st" x="0" y="0" width="372" height="52" patternUnits="userSpaceOnUse">
-              <rect width="372" height="26" fill="#162412"/>
-              <rect y="26" width="372" height="26" fill="#172814"/>
+            <pattern id="st" x="0" y="0" width="228" height="34" patternUnits="userSpaceOnUse">
+              <rect width="228" height="17" fill="#162412"/>
+              <rect y="17" width="228" height="17" fill="#172814"/>
             </pattern>
           </defs>
-          <rect width="372" height="590" fill="url(#st)"/>
-          <rect x="3" y="3" width="366" height="584" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="3"/>
-          <line x1="3" y1="295" x2="369" y2="295" stroke="rgba(255,255,255,0.17)" stroke-width="2"/>
-          <circle cx="186" cy="295" r="50" fill="none" stroke="rgba(255,255,255,0.17)" stroke-width="2"/>
-          <circle cx="186" cy="295" r="4" fill="rgba(255,255,255,0.3)"/>
-          <rect x="86" y="3" width="200" height="90" fill="none" stroke="rgba(255,255,255,0.17)" stroke-width="2"/>
-          <rect x="130" y="3" width="112" height="38" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
-          <circle cx="186" cy="126" r="4" fill="rgba(255,255,255,0.22)"/>
-          <rect x="86" y="497" width="200" height="90" fill="none" stroke="rgba(255,255,255,0.17)" stroke-width="2"/>
-          <rect x="130" y="549" width="112" height="38" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
-          <circle cx="186" cy="464" r="4" fill="rgba(255,255,255,0.22)"/>
+          <rect width="228" height="380" fill="url(#st)"/>
+          <rect x="2" y="2" width="224" height="376" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="2"/>
+          <line x1="2" y1="190" x2="226" y2="190" stroke="rgba(255,255,255,0.17)" stroke-width="1.5"/>
+          <circle cx="114" cy="190" r="32" fill="none" stroke="rgba(255,255,255,0.17)" stroke-width="1.5"/>
+          <circle cx="114" cy="190" r="3" fill="rgba(255,255,255,0.3)"/>
+          <rect x="52" y="2" width="124" height="58" fill="none" stroke="rgba(255,255,255,0.17)" stroke-width="1.5"/>
+          <rect x="80" y="2" width="68" height="24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <circle cx="114" cy="80" r="3" fill="rgba(255,255,255,0.22)"/>
+          <rect x="52" y="320" width="124" height="58" fill="none" stroke="rgba(255,255,255,0.17)" stroke-width="1.5"/>
+          <rect x="80" y="354" width="68" height="24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <circle cx="114" cy="300" r="3" fill="rgba(255,255,255,0.22)"/>
         </svg>
         <div id="zb">
           <div id="zbd">
@@ -87,61 +87,17 @@
 <script>
 (function(){
 var D=[
-  {id:"ori",year:"1919",tag:"As origens",color:"#6B7A3A",
-   title:"O primeiro pontapé",
-   desc:"Jovens bracarenses descobrem o futebol no Campo das Goladas. Para comprar uma bola foram ao Porto. Em Braga ainda não havia onde a encontrar.",
-   bg:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Braga_-_panoramio_%281%29.jpg/1280px-Braga_-_panoramio_%281%29.jpg",
-   l:50,t:90},
-  {id:"fun",year:"1921",tag:"Fundação",color:"#6B7A3A",
-   title:"Nasce o SC Braga",
-   desc:"A 19 de janeiro nasce um clube de alma própria. Camisola vermelha e branca. Uma cidade encontra o seu emblema para sempre.",
-   bg:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Braga_-_S%C3%A9_de_Braga_-_20110628_%282%29.jpg/1280px-Braga_-_S%C3%A9_de_Braga_-_20110628_%282%29.jpg",
-   l:13,t:75},
-  {id:"mc1",year:"1938",tag:"Raízes do concelho",color:"#8B6914",
-   title:"Nasce o Merelinense",
-   desc:"João Soares Vieira funda o Merelinense em São Pedro de Merelim. Duas freguesias, um clube, doze títulos distritais. Um dos grandes do futebol bracarense.",
-   bg:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Braga_city_center.jpg/1280px-Braga_city_center.jpg",
-   l:36,t:75},
-  {id:"mc2",year:"1946",tag:"Identidade",color:"#8B6914",
-   title:"O Arsenal do Minho",
-   desc:"Szabó regressa de Londres com as camisolas do Arsenal. As mangas brancas ficam para sempre. Uma coincidência que definiu a identidade de uma cidade inteira.",
-   bg:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Braga_city_center.jpg/1280px-Braga_city_center.jpg",
-   l:64,t:75},
-  {id:"est",year:"1950",tag:"Infraestrutura",color:"#8B6914",
-   title:"O Estádio 28 de Maio",
-   desc:"Projetado para ombrear com o Jamor. Inaugurado com dois jogos de futebol e uma grande parada desportiva. Hoje Monumento de Interesse Público.",
-   bg:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Est%C3%A1dio_1%C2%BA_de_Maio_%281%29.jpg/1280px-Est%C3%A1dio_1%C2%BA_de_Maio_%281%29.jpg",
-   l:87,t:75},
-  {id:"dum",year:"1962",tag:"Território",color:"#4A6B5D",
-   title:"O Dumiense e Dume",
-   desc:"Fundado a 5 de abril em Dume. Inscrito na AF Braga em 1965. Chega aos nacionais em 2007. O Campo Celestino Lobo é referência da freguesia.",
-   bg:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Estadio_Braga.JPG/1280px-Estadio_Braga.JPG",
-   l:20,t:55},
-  {id:"tac",year:"1966",tag:"Título",color:"#7D4E2E",
-   title:"A primeira Taça de Portugal",
-   desc:"No Jamor, golo de Perrichon derrota o Vitória de Setúbal por 1-0. A cidade paralisa. Primeira presença numa competição europeia.",
-   bg:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Est%C3%A1dio_do_Restelo_campo.jpg/1280px-Est%C3%A1dio_do_Restelo_campo.jpg",
-   l:50,t:55},
-  {id:"ped",year:"2003",tag:"Arquitectura",color:"#4A6B5D",
-   title:"A Pedreira",
-   desc:"Souto Moura escava o Monte do Castro. Trinta mil lugares, cobertura Inca. Prémio Pritzker 2011. Construída para o Euro 2004, ficou para a eternidade.",
-   bg:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Estadio_Braga.JPG/1280px-Estadio_Braga.JPG",
-   l:80,t:55},
-  {id:"rod",year:"2018",tag:"Cidade e desporto",color:"#6B7A3A",
-   title:"A Rodovia renascida",
-   desc:"Requalificação de três milhões amplia o complexo em 50%. Campos renovados, novos balneários, skate park. Aberto a toda a população.",
-   bg:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Braga_-_panoramio_%281%29.jpg/1280px-Braga_-_panoramio_%281%29.jpg",
-   l:18,t:28},
-  {id:"mel",year:"2022",tag:"Uma despedida",color:"#c8a06e",
-   title:"Adeus, Melinha",
-   desc:"Maria Amélia Morais falece aos 86 anos. Viu o primeiro jogo do Braga aos nove anos num campo de terra. Viajou o mundo pelo clube. O miniestádio da Cidade Desportiva leva o seu nome.",
-   bg:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Braga_-_S%C3%A9_de_Braga_-_20110628_%282%29.jpg/1280px-Braga_-_S%C3%A9_de_Braga_-_20110628_%282%29.jpg",
-   l:50,t:10},
-  {id:"cid",year:"2023",tag:"Legado",color:"#4A6B5D",
-   title:"A Cidade Desportiva",
-   desc:"Segunda fase inaugurada a 4 de setembro. Trinta hectares, sete campos, arena multidesportiva, mais de 2000 atletas. O presidente da UEFA: não há limite para o que se pode alcançar.",
-   bg:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Estadio_Braga.JPG/1280px-Estadio_Braga.JPG",
-   l:82,t:28}
+  {id:"ori",year:"1919",tag:"As origens",color:"#6B7A3A",title:"O primeiro pontapé",desc:"Jovens bracarenses descobrem o futebol no Campo das Goladas. Para comprar uma bola foram ao Porto. Em Braga ainda não havia onde a encontrar.",bg:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Braga_-_panoramio_%281%29.jpg/1280px-Braga_-_panoramio_%281%29.jpg",l:50,t:90},
+  {id:"fun",year:"1921",tag:"Fundação",color:"#6B7A3A",title:"Nasce o SC Braga",desc:"A 19 de janeiro nasce um clube de alma própria. Camisola vermelha e branca. Uma cidade encontra o seu emblema para sempre.",bg:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Braga_-_S%C3%A9_de_Braga_-_20110628_%282%29.jpg/1280px-Braga_-_S%C3%A9_de_Braga_-_20110628_%282%29.jpg",l:13,t:75},
+  {id:"mc1",year:"1938",tag:"Raízes do concelho",color:"#8B6914",title:"Nasce o Merelinense",desc:"João Soares Vieira funda o Merelinense em São Pedro de Merelim. Duas freguesias, um clube, doze títulos distritais. Um dos grandes do futebol bracarense.",bg:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Braga_city_center.jpg/1280px-Braga_city_center.jpg",l:36,t:75},
+  {id:"mc2",year:"1946",tag:"Identidade",color:"#8B6914",title:"O Arsenal do Minho",desc:"Szabó regressa de Londres com as camisolas do Arsenal. As mangas brancas ficam para sempre. Uma coincidência que definiu a identidade de uma cidade inteira.",bg:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Braga_city_center.jpg/1280px-Braga_city_center.jpg",l:64,t:75},
+  {id:"est",year:"1950",tag:"Infraestrutura",color:"#8B6914",title:"O Estádio 28 de Maio",desc:"Projetado para ombrear com o Jamor. Inaugurado com dois jogos de futebol e uma grande parada desportiva. Hoje Monumento de Interesse Público.",bg:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Est%C3%A1dio_1%C2%BA_de_Maio_%281%29.jpg/1280px-Est%C3%A1dio_1%C2%BA_de_Maio_%281%29.jpg",l:87,t:75},
+  {id:"dum",year:"1962",tag:"Território",color:"#4A6B5D",title:"O Dumiense e Dume",desc:"Fundado a 5 de abril em Dume. Inscrito na AF Braga em 1965. Chega aos nacionais em 2007. O Campo Celestino Lobo é referência da freguesia.",bg:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Estadio_Braga.JPG/1280px-Estadio_Braga.JPG",l:20,t:55},
+  {id:"tac",year:"1966",tag:"Título",color:"#7D4E2E",title:"A primeira Taça de Portugal",desc:"No Jamor, golo de Perrichon derrota o Vitória de Setúbal por 1-0. A cidade paralisa. Primeira presença numa competição europeia.",bg:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Est%C3%A1dio_do_Restelo_campo.jpg/1280px-Est%C3%A1dio_do_Restelo_campo.jpg",l:50,t:55},
+  {id:"ped",year:"2003",tag:"Arquitectura",color:"#4A6B5D",title:"A Pedreira",desc:"Souto Moura escava o Monte do Castro. Trinta mil lugares, cobertura Inca. Prémio Pritzker 2011. Construída para o Euro 2004, ficou para a eternidade.",bg:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Estadio_Braga.JPG/1280px-Estadio_Braga.JPG",l:80,t:55},
+  {id:"rod",year:"2018",tag:"Cidade e desporto",color:"#6B7A3A",title:"A Rodovia renascida",desc:"Requalificação de três milhões amplia o complexo em 50%. Campos renovados, novos balneários, skate park. Aberto a toda a população.",bg:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Braga_-_panoramio_%281%29.jpg/1280px-Braga_-_panoramio_%281%29.jpg",l:18,t:28},
+  {id:"mel",year:"2022",tag:"Uma despedida",color:"#c8a06e",title:"Adeus, Melinha",desc:"Maria Amélia Morais falece aos 86 anos. Viu o primeiro jogo do Braga aos nove anos num campo de terra. Viajou o mundo pelo clube. O miniestádio da Cidade Desportiva leva o seu nome.",bg:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Braga_-_S%C3%A9_de_Braga_-_20110628_%282%29.jpg/1280px-Braga_-_S%C3%A9_de_Braga_-_20110628_%282%29.jpg",l:50,t:10},
+  {id:"cid",year:"2023",tag:"Legado",color:"#4A6B5D",title:"A Cidade Desportiva",desc:"Segunda fase inaugurada a 4 de setembro. Trinta hectares, sete campos, arena multidesportiva, mais de 2000 atletas. O presidente da UEFA: não há limite para o que se pode alcançar.",bg:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Estadio_Braga.JPG/1280px-Estadio_Braga.JPG",l:82,t:28}
 ];
 
 var fo=document.getElementById('fo');
@@ -156,33 +112,17 @@ var cur=null;
 
 D.forEach(function(p){
   var el=document.createElement('div');
-  el.className='pl';
-  el.id='p'+p.id;
-  el.style.left=p.l+'%';
-  el.style.top=p.t+'%';
-  el.style.position='absolute';
-  var ball=document.createElement('div');
-  ball.className='pb';
-  ball.style.background=p.color;
-  var yr=document.createElement('div');
-  yr.className='pyr';
-  yr.textContent=p.year;
-  el.appendChild(ball);
-  el.appendChild(yr);
+  el.className='pl';el.id='p'+p.id;
+  el.style.left=p.l+'%';el.style.top=p.t+'%';el.style.position='absolute';
+  var ball=document.createElement('div');ball.className='pb';ball.style.background=p.color;
+  var yr=document.createElement('div');yr.className='pyr';yr.textContent=p.year;
+  el.appendChild(ball);el.appendChild(yr);
   el.addEventListener('click',function(){sel(p.id)});
   fo.appendChild(el);
-
-  var ti=document.createElement('div');
-  ti.className='ti';
-  ti.id='t'+p.id;
-  var tiyr=document.createElement('div');
-  tiyr.className='tiyr';
-  tiyr.textContent=p.year;
-  var dot=document.createElement('div');
-  dot.className='tidot';
-  dot.style.background=p.color+'99';
-  ti.appendChild(tiyr);
-  ti.appendChild(dot);
+  var ti=document.createElement('div');ti.className='ti';ti.id='t'+p.id;
+  var tiyr=document.createElement('div');tiyr.className='tiyr';tiyr.textContent=p.year;
+  var dot=document.createElement('div');dot.className='tidot';dot.style.background=p.color+'99';
+  ti.appendChild(tiyr);ti.appendChild(dot);
   ti.addEventListener('click',function(){sel(p.id)});
   tb.appendChild(ti);
 });
@@ -191,13 +131,10 @@ document.getElementById('zcl').addEventListener('click',function(){reset()});
 zb.addEventListener('click',function(e){if(e.target===zb)reset()});
 
 function reset(){
-  cur=null;
-  zb.classList.remove('on');
-  fo.style.transform='';
+  cur=null;zb.classList.remove('on');fo.style.transform='';
   D.forEach(function(p){var e=document.getElementById('p'+p.id);if(e)e.classList.remove('act')});
   tb.querySelectorAll('.ti').forEach(function(t){t.classList.remove('on')});
-  pc.classList.remove('on');
-  pbg.style.opacity='0';
+  pc.classList.remove('on');pbg.style.opacity='0';
 }
 
 function sel(id){
@@ -205,20 +142,15 @@ function sel(id){
   cur=id;
   var p=D.find(function(x){return x.id===id});
   D.forEach(function(d){var e=document.getElementById('p'+d.id);if(e)e.classList.remove('act')});
-  var el=document.getElementById('p'+id);
-  if(el)el.classList.add('act');
+  var el=document.getElementById('p'+id);if(el)el.classList.add('act');
   tb.querySelectorAll('.ti').forEach(function(t){t.classList.remove('on')});
   var ti=document.getElementById('t'+id);
   if(ti){ti.classList.add('on');ti.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'})}
-  zyr.textContent=p.year;
-  zyr.style.color=p.color;
-  zti.textContent=p.title;
-  zti.style.color=p.color;
+  zyr.textContent=p.year;zyr.style.color=p.color;
+  zti.textContent=p.title;zti.style.color=p.color;
   zpo.textContent=p.tag;
-  zb.classList.add('on');
-  fo.style.transform='scale(1.06)';
-  pbg.style.backgroundImage='url('+p.bg+')';
-  pbg.style.opacity='1';
+  zb.classList.add('on');fo.style.transform='scale(1.06)';
+  pbg.style.backgroundImage='url('+p.bg+')';pbg.style.opacity='1';
   pc.classList.remove('on');
   setTimeout(function(){
     pc.innerHTML='<span class="ptag" style="background:'+p.color+'33;color:'+p.color+';border:1px solid '+p.color+'55">'+p.tag+'</span><div class="pyear">'+p.year+'</div><div class="ptitle">'+p.title+'</div><div class="pdesc">'+p.desc+'</div>';
